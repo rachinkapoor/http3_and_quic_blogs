@@ -1,7 +1,7 @@
 # HTTP/3 QUIC - The Intorduction
-This introduces you to the world of QUIC and HTTP/3. The challanges it solves, the thought process behind the the solution and the solution it self.
+This introduces you to the world of QUIC and HTTP/3. The challanges it solves, the thought process behind the solution and the solution it self.
 I shall also discuss why HTTP/2 is not going anywhere and here to stay. 
-Yes, inspite of new innovations, you applications need to support HTTP/2 for a forciable future.
+Yes, inspite of new innovations, your applications need to support HTTP/2 for a forciable future.
 
 ## In layman's terms what is QUIC?
 QUIC (Quick UDP Internet Connections, pronounced quick) is an experimental transport layer network protocol designed by engineers at Google.
@@ -10,7 +10,7 @@ This led to innovation of QUIC, and to implement HTTP over it, some tweaks were 
 
 
 ## Where we are with HTTP/2 - Network Protocol Stack
-Network protocols are the set of rules all parties on a network follow to provide reliable and safe communication over it. You can think of them like the programs on your PC that lets you tell the PC what to do clearly and accurately. Similarly, a network protocol makes sure both ( and the intermediary) communicating end-points are on the same page.
+Network protocols are the set of rules, all parties on a network follow, to provide reliable and safe communication over it. You can think of them like the programs on your PC that lets you tell the PC what to do clearly and accurately. Similarly, a network protocol makes sure both (and the intermediary) communicating end-points are on the same page.
 Just like with programs, *modularisation* network protocols is a great way to make them reusable and modifiable with less effort. So, we break down a network protocol into multiple *layers* and pile them into a *stack*. Each *layer* provides a specific function and interacts with its nearest layers. This way, we can change or reuse only the functions in one layer without having to do them for the whole stack to push new features.
 So, we have the *transport layer* that ensures **reliable** traffic on the Internet. TCP serves this function in HTTP/2 but QUIC does it in HTTP/3. We also have an *encryption layer* to keep the communication **secure**. TLS does it both versions of HTTP. You can look at the infographic below to see the build up of the TCP/IP network protocol stack.
 
@@ -35,13 +35,13 @@ Now, this handshake takes one full trip from the client to the server and back t
 
 ### The other part of challange - The internet today.
 
-When our applications access data using internet, the request travells through many **middleboxes**.
+When our applications access data using internet, the request travels through many **middleboxes**.
 Building a new transport layer however means these **middleboxes** need to be upgraded to support the new transport protocol.
 Hence, the new transport layer can not be built from scratch. 
 The clever engineers at google overcame this challange builing QUIC on top of another existing and widely supported network layer, **UDP**.
 
 ### So why is HTTP/2 is here to stay?
-Meet the **firewalls**. Firewalls altough not tightly integrated into the internet infrastucture, have been widely adpoted.
+Meet the **firewalls**. Firewalls although not tightly integrated into the internet infrastucture, have been widely adpoted.
 For an avg internet user, there was very little to no need to use the UDP protocol. 
 Hence, most firewalls block UDP by default and treat it as (essentially) unsolicited network traffic.
 The same problem of mass updates applies to firewalls as well. 
